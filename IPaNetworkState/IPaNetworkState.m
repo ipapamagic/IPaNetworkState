@@ -16,8 +16,14 @@ static NSInteger networkCounter = 0;
 }
 +(void)endNetworking
 {
-    assert(networkCounter > 0);
+    //    assert(networkCounter > 0);
     networkCounter -= 1;
+    if (networkCounter < 0)
+    {
+        networkCounter = 0;
+        NSLog(@"Network State counter less than 0!!!");
+    }
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = (networkCounter != 0);
 }
 @end
