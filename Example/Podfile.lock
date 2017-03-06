@@ -1,0 +1,16 @@
+PODS:
+  - IPaNetworkState (0.1.0)
+
+DEPENDENCIES:
+  - IPaNetworkState (from `../`)
+
+EXTERNAL SOURCES:
+  IPaNetworkState:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IPaNetworkState: b651a37679304e6d3c1c3b174d2e94ae69f8e70b
+
+PODFILE CHECKSUM: 20225baf5ebec7871f4165594a0c442d7c60cf13
+
+COCOAPODS: 1.1.1

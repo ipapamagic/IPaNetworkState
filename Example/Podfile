@@ -1,0 +1,6 @@
+use_frameworks!
+target 'IPaNetworkState_Tests' do
+  pod 'IPaNetworkState', :path => '../'
+  
+  
+end
