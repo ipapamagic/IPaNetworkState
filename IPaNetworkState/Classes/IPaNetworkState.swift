@@ -10,12 +10,12 @@ import UIKit
 
 open class IPaNetworkState: NSObject {
     static var networkCounter = 0
-    static public func startNetworking() {
+    @objc class public func startNetworking() {
         networkCounter += 1
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
     }
-    static public func endNetworking() {
+    @objc class public func endNetworking() {
         networkCounter -= 1
         if networkCounter <= 0 {
            networkCounter = 0

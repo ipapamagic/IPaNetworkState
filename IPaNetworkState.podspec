@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IPaNetworkState'
-  s.version          = '1.0'
+  s.version          = '2.0'
   s.summary          = 'A short description of IPaNetworkState.'
 
 # This description is used to generate tags and improve search results.
@@ -40,6 +40,6 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
     s.xcconfig = {
-        "SWIFT_VERSION" => "3.0",
+        "SWIFT_VERSION" => "4.0",
     }
 end
