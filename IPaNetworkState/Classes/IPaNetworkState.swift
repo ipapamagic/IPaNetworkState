@@ -10,16 +10,31 @@ import UIKit
 
 open class IPaNetworkState: NSObject {
     static var networkCounter = 0
+    static var isNetworkActivityIndicatorVisible:Bool {
+        get {
+            return UIApplication.shared.isNetworkActivityIndicatorVisible
+        }
+        set {
+            if Thread.isMainThread {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = newValue
+            }
+            else {
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = newValue
+                }
+            }
+        }
+    }
     @objc class public func startNetworking() {
         networkCounter += 1
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.isNetworkActivityIndicatorVisible = true
         
     }
     @objc class public func endNetworking() {
         networkCounter -= 1
         if networkCounter <= 0 {
-           networkCounter = 0
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            networkCounter = 0
+            self.isNetworkActivityIndicatorVisible = false
         }
     }
 }
